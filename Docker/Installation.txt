@@ -1,0 +1,32 @@
+1. Update your system
+
+sudo apt update
+sudo apt upgrade
+
+2. Install pre-requisite packages
+
+sudo apt-get install curl apt-transport-https ca-certificates software-properties-common
+
+3. Add docker repositories 
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+apt-cache policy docker-ce
+
+4. Install docker on Ubuntu
+
+sudo apt install docker-ce
+
+5.Check docker status
+
+systemctl status docker
+docker --version
+                                                    
+                                            OR
+
+1. apt-get install docker.io
+
+ 
+
+
