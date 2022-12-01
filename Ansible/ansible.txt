@@ -1,0 +1,23 @@
+ - hosts: all
+   become: true
+   tasks :
+     - name: "Installing apache2"
+       shell: apt-get update -y && apt-get install apache2 -y
+
+     - name: "Installing unzip"
+       shell: apt-get install unzip
+
+
+
+
+ - hosts: demo1
+   become: true
+   tasks :
+     - name: "Installing apache2"
+       shell: apt-get update -y && apt-get install apache2 -y
+
+ - hosts: demo2
+   become: true
+   tasks :
+     - name: "Installing unzip"
+       shell: apt-get install unzip
