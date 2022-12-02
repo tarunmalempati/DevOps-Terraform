@@ -1,0 +1,14 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Installing apache2
+      apt:
+        name: apache2
+        state: present
+      register: out 
+
+    - name: starting apache2 service
+      service:
+        name: apache2 
+        state: stated
+      when: out.changed == True
