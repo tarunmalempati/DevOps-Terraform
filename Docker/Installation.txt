@@ -25,7 +25,21 @@ docker --version
                                                     
                                             OR
 
-1. apt-get install docker.io
+1. Update Repositories
+  sudo apt-get update
+  
+2. Remove prior installations
+    sudo apt-get remove docker docker-engine docker.io
+    
+3. Install Docker
+    apt-get install docker.io
+    
+4. Start and automate Docker
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    
+5. Check version
+    docker --version
 
                                            INSTALL DOCKER COMPOSE
 
