@@ -9,4 +9,7 @@ provider "aws" {
 resource "aws_instance" "ap-south-1" {
   ami           = "ami-0d8633ffb1a5574db"
   instance_type = "t2.micro"
+  tags = {
+    Name = "demo-server"
+  }
 }
