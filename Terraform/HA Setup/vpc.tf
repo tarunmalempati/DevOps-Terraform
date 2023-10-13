@@ -23,6 +23,7 @@ resource "aws_subnet" "demo-public-1a" {
   tags = {
     Name = "demo-public-1a"
   }
+}
 
   resource "aws_subnet" "demo-public-1b" {
   vpc_id     = aws_vpc.demo.id
@@ -96,6 +97,16 @@ resource "aws_route_table_association" "demo-public-1a" {
 resource "aws_route_table_association" "demo-public-1b" {
   subnet_id      = aws_subnet.demo-public-1b.id
   route_table_id = aws_route_table.demo-public-rt.id
+}
+
+resource "aws_route_table_association" "demo-private-1a" {
+  subnet_id      = aws_subnet.demo-private-1a.id
+  route_table_id = aws_route_table.demo-private-1a-rt.id
+}
+
+resource "aws_route_table_association" "demo-private-1b" {
+  subnet_id      = aws_subnet.demo-private-1b.id
+  route_table_id = aws_route_table.demo-private-1b-rt.id
 }
 
 resource "aws_eip" "eip-1" {
