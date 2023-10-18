@@ -68,13 +68,9 @@ resource "aws_route_table_association" "demo-public-rta" {
 }
 
 resource "aws_route_table_association" "demo-private-1a" {
-  subnet_id      = aws_subnet.demo-private-1a.id
-  route_table_id = aws_route_table.demo-private-1a-rt.id
-}
-
-resource "aws_route_table_association" "demo-private-1b" {
-  subnet_id      = aws_subnet.demo-private-1b.id
-  route_table_id = aws_route_table.demo-private-1b-rt.id
+  count = length(var.private_rta)
+  subnet_id      = lookup(var.private_rta[count.index],"subnet_id")
+  route_table_id = lookup(var.private_rta[count.index],"route_table_id")
 }
 
 resource "aws_eip" "eip-1" {
@@ -89,10 +85,8 @@ resource "aws_nat_gateway" "demo-public-nats" {
   count = length(var.public_nats)
   allocation_id = lookup(var.public_nats[count.index],"allocation_id")
   subnet_id     = lookup(var.public_nats[count.index],"subnet_id")
-
   tags = {
     Name = lookup(var.public_nats[count.index],"name")
 }
   depends_on = [aws_internet_gateway.igw]
 }
-              
