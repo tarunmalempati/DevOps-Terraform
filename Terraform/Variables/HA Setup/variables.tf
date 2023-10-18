@@ -37,11 +37,25 @@ variable "public_rta" {
    default = [
     {
       subnet_id = "aws_subnet.demo-public-1a.id"
-      route_teble_id = "aws_route_table.demo-public-rt.id"
+      route_table_id = "aws_route_table.demo-public-rt.id"
     },
     {
       subnet_id = "aws_subnet.demo-public-1b.id"
-      route_teble_id = "aws_route_table.demo-public-rt.id"
+      route_table_id = "aws_route_table.demo-public-rt.id"
+     }
+   ]
+}
+
+variable "private_rta" {
+   type = list
+   default = [
+    {
+      subnet_id = "aws_subnet.demo-private-1a.id"
+      route_table_id = "aws_route_table.demo-private-1a-rt.id"
+    },
+    {
+      subnet_id = "aws_subnet.demo-private-1b.id"
+      route_table_id = "aws_route_table.demo-private-1b-rt.id"
      }
    ]
 }
@@ -49,30 +63,32 @@ variable "public_rta" {
 variable "private_rts"{
    type = list
    default = [ 
-    {variable "public_nats" {
-   type = list
-   default = [ 
     {
-     allocation_id = "aws_eip.eip-1.id"
-     subnet_id = "aws_subnet.demo-public-1a.id"
-     name = "demo-public-1a-nat"
-    },
-    {
-     allocation_id = "aws_eip.eip-2.id"
-     subnet_id = "aws_subnet.demo-public-1b.id"
-     name = "demo-public-1b-nat"
-    }
-  ]
-}
       cidr_block = "0.0.0.0/0"
-      gateway_id = "aws_nat_gateway.demo-public-1a-nat.id"
+      gateway_id = "demo-public-1a-nat"
       name = "demo-private-1a-rt"
     },
     {
       cidr_block = "0.0.0.0/0"
-      gateway_id = "aws_nat_gateway.demo-public-1b-nat.id"
+      gateway_id = "demo-public-1b-nat"
       name = "demo-private-1b-rt"
     }
- ]
+  ]
 }
 
+
+variable "public_nats" {
+   type = list
+   default = [ 
+    {
+     allocation_id = "aws_eip.eip-1.id"
+     name = "demo-public-1a-nat"
+     subnet_id = "aws_subnet.demo-public-1a.id"
+    },
+    {
+     allocation_id = "aws_eip.eip-2.id"
+     name = "demo-public-1b-nat"
+     subnet_id = "aws_subnet.demo-public-1b.id"
+    }
+  ]
+}
