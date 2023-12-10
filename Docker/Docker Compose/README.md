@@ -2,7 +2,7 @@ To build and run the multi-container app using Docker Compose, follow these step
 
 1. Create the directory structure and files:
 2. Navigate to the project directory:
-3. Run the Docker Compose command:
+3. Run the Docker Compose command:  
    docker-compose up --build  
 This command will create and start the containers for both services based on the configurations in the docker-compose.yml file.
 4. Stopping the containers:  
