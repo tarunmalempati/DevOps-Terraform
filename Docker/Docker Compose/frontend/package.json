@@ -1,0 +1,11 @@
+{
+  "name": "frontend-app",
+  "version": "1.0.0",
+  "description": "Frontend Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+  }
+}
