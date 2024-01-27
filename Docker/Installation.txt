@@ -41,10 +41,15 @@ docker --version
 5. Check version
     docker --version
 
-                                           INSTALL DOCKER COMPOSE
+                                                                 INSTALL DOCKER COMPOSE
 
 1.     sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 2.     sudo chmod +x /usr/local/bin/docker-compose
 3.     docker-compose --version
 
-
+                                                                  INSTALL DOCKER SCOUT  
+1. mkdir -p ~/.docker/cli-plugins  
+2. wget wget https://github.com/docker/scout-cli/releases/download/v0.15.0/docker-scout_0.15.0_linux_amd64.tar.gz  
+3. tar -xvzf docker-scout_0.15.0_linux_amd64.tar.gz  
+4. mv docker-scout ~/.docker/cli-plugins  
+5. chmod +x ~/.docker/cli-plugins/docker-scout  
