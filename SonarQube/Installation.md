@@ -328,7 +328,7 @@ sudo nano sonar-scanner-cli-4.6.2.2472-linux/conf/sonar-scanner.properties
 ```
 > **Step 1:** First, tell the scanner where it should submit the code analysis results. Un-comment the line starting with sonar.host.url and set it to the URL of your SonarQube server:
 >```
->sonar.host.url=http://127.0.0.1
+>sonar.host.url=http://127.0.0.1:9000  
 >``` 
 > **Step 2:** Save and close the file.
 
