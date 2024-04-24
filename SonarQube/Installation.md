@@ -1,3 +1,4 @@
+SonarQube installation requires 2 vCPU and 4 GiB memory.  
 # How To Install SonarQube on Ubuntu 20.04LTS
 
 This document will talk about how to install SonarQube on Ubuntu 20.04LTS manually step by step, so that you know
