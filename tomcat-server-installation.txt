@@ -1,0 +1,16 @@
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
+tar -xvzf apache-tomcat-9.0.89.tar.gz
+mv apache-tomcat-9.0.89/ tomcat
+
+To change the port of the tomcat server edit the file called server.xml in the directory /tomcat/conf => edit the connector port not the server port
+
+Inorder to access the complete tomcat server we need to edit the context.xml file in the direcotry => /home/ubuntu/tomcat/webapps/manager/META-INF/
+In the above edit the allow tag in the valve tag => allow=".*"
+
+We also need to edit the tomcat-users.xml file to configure the users. This file will be available in the /tomcat/conf directory.
+Add the below content in the tomcat-users.xml file.
+
+<role rolename="manager-gui" />
+<user username="tomcat" password="tomcat" roles="manager-gui" />
+<role rolename="admin-gui" />  
+<user username="admin" password="admin" roles="manager-gui,admin-gui"/>
