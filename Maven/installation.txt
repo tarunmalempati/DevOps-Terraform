@@ -24,3 +24,8 @@ export PATH
 
 :wq!
 source ~/.bashrc
+
+
+To create a sample maven project folder structure execute the below command after installing maven.
+=> mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
