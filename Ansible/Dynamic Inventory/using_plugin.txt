@@ -1,0 +1,23 @@
+Here's an example of how you might configure a dynamic inventory using the AWS EC2 plugin:  
+  
+1. Install boto3 and botocore:    
+
+pip install boto3 botocore  
+
+2. Create a Configuration File:
+Create a file named aws_ec2.yaml with the following content:
+
+plugin: aws_ec2
+regions:
+  - ap-south-1
+filters:
+  instance-state-name: running
+
+3. Run Ansible with Dynamic Inventory:
+Use the -i option to specify the dynamic inventory file:
+
+ansible-inventory -i aws_ec2.yaml --graph
+
+This will query AWS for running EC2 instances in the ap-south-1 region and use them as the inventory for Ansible.
+
+
