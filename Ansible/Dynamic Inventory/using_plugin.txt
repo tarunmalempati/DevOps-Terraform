@@ -16,15 +16,13 @@ filters:
 3. Run Ansible with Dynamic Inventory:
 Use the -i option to specify the dynamic inventory file:
 
-ansible-inventory -i aws_ec2.yaml --graph
+ansible-inventory -i aws_ec2.yml --graph
 
 This will query AWS for running EC2 instances in the ap-south-1 region and use them as the inventory for Ansible.
 
 4. Execute a Sample Command
 Run a sample command to ping all instances in the dynamic inventory:
 
-ansible -i aws_ec2.yaml all -m ping
+ansible -i aws_ec2.yml all -m ping
 
 This command will use the aws_ec2.yaml configuration to dynamically fetch the list of running EC2 instances in the ap-south-1 region and then run the ping module on all of them.
-
-
