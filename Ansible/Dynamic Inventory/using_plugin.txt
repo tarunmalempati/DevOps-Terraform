@@ -25,4 +25,4 @@ Run a sample command to ping all instances in the dynamic inventory:
 
 ansible -i aws_ec2.yml all -m ping
 
-This command will use the aws_ec2.yaml configuration to dynamically fetch the list of running EC2 instances in the ap-south-1 region and then run the ping module on all of them.
+This command will use the aws_ec2.yml configuration to dynamically fetch the list of running EC2 instances in the ap-south-1 region and then run the ping module on all of them.
