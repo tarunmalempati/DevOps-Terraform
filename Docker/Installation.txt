@@ -53,3 +53,11 @@ docker --version
 3. tar -xvzf docker-scout_0.15.0_linux_amd64.tar.gz  
 4. mv docker-scout ~/.docker/cli-plugins  
 5. chmod +x ~/.docker/cli-plugins/docker-scout  
+
+                                                                 INSTALL DOCKER BUILDX
+1. Install docker using the above given commands.
+2. mkdir -p ~/.docker/cli-plugins/
+3. curl -SL https://github.com/docker/buildx/releases/download/v0.10.5/buildx-v0.10.5.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+4. chmod +x ~/.docker/cli-plugins/docker-buildx
+5. docker buildx version
+
