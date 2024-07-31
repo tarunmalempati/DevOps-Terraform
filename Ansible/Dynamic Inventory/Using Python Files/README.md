@@ -15,5 +15,5 @@
 
    or
 
-   if you didnt specify the inventory source in the ansible.cfg file, you can run the below ansible command by including inventory file in the command itself:
+   if you didnt specify the inventory source in the ansible.cfg file, you can run the below ansible command by including inventory file in the command itself:  
    ansible -i ec2_details.py -m ping all
