@@ -8,7 +8,7 @@
 
 5. Edit your ansible.cfg file to use the script as the inventory source:  
    [defaults]  
-   inventory = ./dynamic_inventory.py  
+   inventory = ./ec2_details.py  
    
 7. You can now run Ansible commands using the dynamic inventory:  
    ansible all -m ping  
