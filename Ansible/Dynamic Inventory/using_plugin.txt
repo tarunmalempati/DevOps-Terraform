@@ -1,5 +1,6 @@
 Here's an example of how you might configure a dynamic inventory using the AWS EC2 plugin:  
-  
+Requirements: AWS CLI to be installed
+
 1. Install boto3 and botocore:    
 
 pip install boto3 botocore  
@@ -23,6 +24,6 @@ This will query AWS for running EC2 instances in the ap-south-1 region and use t
 4. Execute a Sample Command
 Run a sample command to ping all instances in the dynamic inventory:
 
-ansible -i aws_ec2.yml all -m ping
+ansible -i aws_ec2.yml -m ping all
 
 This command will use the aws_ec2.yml configuration to dynamically fetch the list of running EC2 instances in the ap-south-1 region and then run the ping module on all of them.
